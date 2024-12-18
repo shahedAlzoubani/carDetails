@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <title>CAR DETAILS</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Enter Car Type</h1>
+        <input type="text" id="carType" placeholder="FORD, TOYOTA, NISSAN, JEEP, BMW">
+        <button id="submitBtn">Show Details</button>
+        <div id="carDetails" class="hidden"></div>
+    </div>
+    <script src="app.js"></script>
+    <script>
+        // Register the service worker
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js')
+                .then(registration => {
+                    console.log('Service Worker registered with scope:', registration.scope);
+                }).catch(error => {
+                    console.log('Service Worker registration failed:', error);
+                });
+        }
+    </script>
+</body>
+</html>
+
+
